@@ -48,5 +48,14 @@
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "reactjs",
+    "react-hooks",
+    "hooks",
+    "state",
+    "reducer",
+    "useState",
+    "useReducer"
   ]
 }
