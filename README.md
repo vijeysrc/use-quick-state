@@ -56,6 +56,51 @@ const Example = () => {
 }
 ```
 
+## Usage - With generic (curriable) set and get
+
+```jsx
+import React from 'react'
+import useQuickState from 'use-quick-state'
+
+const Example = () => {
+  const { get, set } = useQuickState({
+    name: 'JavaScript',
+    age: 30,
+    isPopular: true
+  }),
+  name = get('name'),
+  isPopular = get('isPopular'),
+  age = get('age')
+
+  return (
+    <form>
+      <label>
+        Name:
+        <input type="text" name={name} onChange={set('name')} />
+      </label>
+      <br />
+      <label>
+        Is popular?:
+        <input
+          name="isPopular"
+          type="checkbox"
+          checked={isPopular}
+          onChange={set('isPopular')} />
+      </label>
+      <br />
+      <label>
+        Number of years in use:
+        <input
+          name="age"
+          type="number"
+          value={age}
+          onChange={value => setAge('age', value)} />
+      </label>
+    </form>
+  )
+}
+```
+
 ## License
 
 MIT © [vijeysrc](https://github.com/vijeysrc)
