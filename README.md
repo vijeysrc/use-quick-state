@@ -6,7 +6,10 @@
   - Provides getter and setter for a given single-level (non-nested) object.
   - Getter and setter names are based on the key names of the input object.
   - See Usage: For a given object with keys name, age and isPopular, the hook returns a set of getters and setters such as name, setName, age, setAge, isPopular, setIsPopular.
-  - The hook also provides a generic getter and setter method called get and set.
+  - Generic get and set function
+    - The hook also provides a generic getter and setter method called get and set.
+    - The set function takes two arguments - key name and its value.
+    - This set function is curriable. See the usage given below.
 
 ## Installation
 
