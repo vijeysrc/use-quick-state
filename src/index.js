@@ -1,6 +1,6 @@
 import { useReducer } from 'react'
 
-const useEasyState = initialValue => {
+const useQuickState = initialValue => {
   const [state, dispatch] = useReducer(
     (state, { key, value }) => ({
       ...state,
@@ -31,4 +31,4 @@ const useEasyState = initialValue => {
   }
 }
 
-export default useEasyState
+export default useQuickState

@@ -1,20 +1,20 @@
 {
-  "name": "use-easy-state",
+  "name": "use-quick-state",
   "version": "0.1.0",
   "description": "An easy way to add state without having multiple useState hooks. Too many useState hooks have to be refactored using useReducer. This hook abstracts that conversion from useState to useReducer. It looks like useState but behaves like useReducer.",
   "author": "Vijey Narayanaswamy",
-  "main": "dist/use-easy-state.js",
-  "umd:main": "dist/use-easy-state.umd.js",
-  "module": "dist/use-easy-state.m.js",
-  "unpkg": "dist/use-easy-state.umd.js",
+  "main": "dist/use-quick-state.js",
+  "umd:main": "dist/use-quick-state.umd.js",
+  "module": "dist/use-quick-state.m.js",
+  "unpkg": "dist/use-quick-state.umd.js",
   "source": "src/index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vijeysrc/use-easy-state.git"
+    "url": "https://github.com/vijeysrc/use-quick-state.git"
   },
   "bugs": {
-    "url": "https://github.com/vijeysrc/use-easy-state/issues"
+    "url": "https://github.com/vijeysrc/use-quick-state/issues"
   },
   "peerDependencies": {
     "react": "^17.0.1"

@@ -1,6 +1,6 @@
-# useEasyState
+# useQuickState
 
-> useEasyState is a React hook. An easy way to add state without having multiple useState hooks. Too many useState hooks have to be refactored using useReducer. This hook abstracts that conversion from useState to useReducer. It looks like useState but behaves like useReducer.
+> useQuickState is a React hook. An easy way to add state without having multiple useState hooks. Too many useState hooks have to be refactored using useReducer. This hook abstracts that conversion from useState to useReducer. It looks like useState but behaves like useReducer.
 
 ## Features:
   - Provides getter and setter for a given single-level (non-nested) object.
@@ -11,17 +11,17 @@
 ## Installation
 
 ```bash
-npm install --save use-easy-state
+npm install --save use-quick-state
 ```
 
 ## Usage
 
 ```jsx
 import React from 'react'
-import useEasyState from 'use-easy-state'
+import useQuickState from 'use-quick-state'
 
 const Example = () => {
-  const { name, age, isPopular, setName, setAge, setIsPopular } = useEasyState({
+  const { name, age, isPopular, setName, setAge, setIsPopular } = useQuickState({
     name: 'JavaScript',
     age: 30,
     isPopular: true

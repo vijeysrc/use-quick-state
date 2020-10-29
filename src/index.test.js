@@ -1,10 +1,10 @@
 import { renderHook, act } from '@testing-library/react-hooks'
-import useEasyState from './'
+import useQuickState from './'
 
-describe('useEasyState', () => {
+describe('useQuickState', () => {
   it('should take up an initial object and return getters and setters', () => {
     const { result } = renderHook(() =>
-      useEasyState({
+      useQuickState({
         name: 'JavaScript',
         age: 30,
         isPopular: true
