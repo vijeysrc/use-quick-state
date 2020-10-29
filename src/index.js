@@ -1,7 +1,7 @@
 import { useReducer } from 'react'
 
-function curry(func) {
-  return function curried(...args) {
+function curry (func) {
+  return function curried (...args) {
     if (args.length >= func.length) {
       return func.apply(this, args)
     } else {
