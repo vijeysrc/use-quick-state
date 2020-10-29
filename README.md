@@ -1,4 +1,4 @@
-# useQuickState [![Build Status](https://api.travis-ci.org/vijeysrc/use-quick-state.svg?branch=master)](https://travis-ci.org/vijeysrc/use-quick-state)
+# useQuickState [![Build Status](https://api.travis-ci.org/vijeysrc/use-quick-state.svg?branch=main)](https://travis-ci.org/vijeysrc/use-quick-state)
 
 > useQuickState is a React hook. An easy way to add state without having multiple useState hooks. Too many useState hooks have to be refactored using useReducer. This hook abstracts that conversion from useState to useReducer. It looks like useState but behaves like useReducer.
 
