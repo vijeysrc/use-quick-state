@@ -1,3 +1,5 @@
+/* eslint jsx-quotes: ["error", "prefer-double"] */
+
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 

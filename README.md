@@ -23,18 +23,29 @@ npm install --save use-quick-state
 import React from 'react'
 import useQuickState from 'use-quick-state'
 
+const eCbk = cbk => ({ target: { type, value, checked } }) =>
+  cbk(type === 'checkbox' ? checked : value)
+
 const Example = () => {
-  const { name, age, isPopular, setName, setAge, setIsPopular } = useQuickState({
-    name: 'JavaScript',
-    age: 30,
-    isPopular: true
-  })
+  const { name, age, isPopular, setName, setAge, setIsPopular } = useQuickState(
+    {
+      name: 'JavaScript',
+      age: 30,
+      isPopular: true
+    }
+  )
 
   return (
     <form>
+      <div data-testid="name-value">{name}</div>
+      <div data-testid="age-value">{age}</div>
+      <div data-testid="popular-value">
+        {isPopular ? 'Popular' : 'Not popular'}
+      </div>
+      <hr />
       <label>
         Name:
-        <input type="text" name={name} onChange={setName} />
+        <input type="text" name={name} onChange={eCbk(setName)} />
       </label>
       <br />
       <label>
@@ -43,16 +54,13 @@ const Example = () => {
           name="isPopular"
           type="checkbox"
           checked={isPopular}
-          onChange={setIsPopular} />
+          onChange={eCbk(setIsPopular)}
+        />
       </label>
       <br />
       <label>
         Number of years in use:
-        <input
-          name="age"
-          type="number"
-          value={age}
-          onChange={setAge} />
+        <input name="age" type="number" value={age} onChange={eCbk(setAge)} />
       </label>
     </form>
   )
