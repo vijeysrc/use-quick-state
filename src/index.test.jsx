@@ -24,7 +24,7 @@ describe('useQuickState - UI / Component', () => {
 
     expect(screen.getByTestId('name-value').textContent).toBe('Backbone')
     expect(screen.getByTestId('age-value').textContent).toBe('10')
-    expect(screen.getByTestId('popular-value').textContent).toBe('Not Popular')
+    expect(screen.getByTestId('popular-value').textContent).toBe('Not popular')
   })
 })
 
