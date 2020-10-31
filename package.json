@@ -1,6 +1,6 @@
 {
   "name": "use-quick-state",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "An easy way to add state without having multiple useState hooks. Too many useState hooks have to be refactored using useReducer. This hook abstracts that conversion from useState to useReducer. It looks like useState but behaves like useReducer.",
   "author": "Vijey Narayanaswamy",
   "main": "dist/use-quick-state.js",
