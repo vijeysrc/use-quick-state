@@ -1,7 +1,8 @@
 import { useReducer } from 'react'
 
-function curry (func) {
-  return function curried (...args) {
+/* eslint-disable space-before-function-paren */
+function curry(func) {
+  return function curried(...args) {
     if (args.length >= func.length) {
       return func.apply(this, args)
     } else {
@@ -12,7 +13,10 @@ function curry (func) {
   }
 }
 
-const useQuickState = initialValue => {
+const fromEventObject = ({ target: { type, value, checked } }) =>
+  type === 'checkbox' ? checked : value
+
+const useQuickState = (initialValue, passEventObjectToSetters) => {
   const [state, dispatch] = useReducer(
     (state, { key, value }) => ({
       ...state,
@@ -21,13 +25,13 @@ const useQuickState = initialValue => {
     initialValue
   )
   const get = key => state[key]
-  const set = curry((key, value) =>
+  const set = curry((key, value) => {
     dispatch({
       type: 'SET',
       key,
-      value
+      value: passEventObjectToSetters ? fromEventObject(value) : value
     })
-  )
+  })
   const helpers = Object.keys(initialValue).reduce((acc, curr) => {
     const setKey = `set${curr.charAt(0).toUpperCase()}${curr.substr(1)}`
     return {

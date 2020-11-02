@@ -78,7 +78,7 @@ const Example = () => {
     name: 'JavaScript',
     age: 30,
     isPopular: true
-  }),
+  }, true), // When you pass true value here, the setters consider its input value as an event object and extracts value out of it.  In this case, you don't need a method like eCbk as used in the previous usage example.
   name = get('name'),
   isPopular = get('isPopular'),
   age = get('age')
@@ -111,6 +111,20 @@ const Example = () => {
   )
 }
 ```
+
+## API
+### useQuickState(initialData, passEventObjectToSetters)
+Returns: `Object` with state and its setters
+
+#### initialData
+Type: `Object`
+
+This hook takes a single-level (non-nested) object
+
+#### passEventObjectToSetters
+Type: `Boolean`
+
+With this flag set to true, you can directly use the setters as an onChange function.  The setters consider its input value as an event object and extracts value out of it.  In this case, you don't need a method like eCbk as used in the first usage example.
 
 ## License
 

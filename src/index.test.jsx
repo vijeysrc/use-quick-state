@@ -30,16 +30,14 @@ describe('useQuickState - UI / Component', () => {
   })
 })
 
-const eCbk = cbk => ({ target: { type, value, checked } }) =>
-  cbk(type === 'checkbox' ? checked : value)
-
 const Example = () => {
   const { name, age, isPopular, setName, setAge, setIsPopular } = useQuickState(
     {
       name: 'JavaScript',
       age: 30,
       isPopular: true
-    }
+    },
+    true
   )
 
   return (
@@ -52,7 +50,7 @@ const Example = () => {
       <hr />
       <label>
         Name:
-        <input type="text" name={name} onChange={eCbk(setName)} />
+        <input type="text" name={name} onChange={setName} />
       </label>
       <br />
       <label>
@@ -61,13 +59,13 @@ const Example = () => {
           name="isPopular"
           type="checkbox"
           checked={isPopular}
-          onChange={eCbk(setIsPopular)}
+          onChange={setIsPopular}
         />
       </label>
       <br />
       <label>
         Number of years in use:
-        <input name="age" type="number" value={age} onChange={eCbk(setAge)} />
+        <input name="age" type="number" value={age} onChange={setAge} />
       </label>
     </form>
   )
