@@ -74,39 +74,55 @@ import React from 'react'
 import useQuickState from 'use-quick-state'
 
 const Example = () => {
-  const { get, set } = useQuickState({
-    name: 'JavaScript',
-    age: 30,
-    isPopular: true
-  }, true), // When you pass true value here, the setters consider its input value as an event object and extracts value out of it.  In this case, you don't need a method like eCbk as used in the previous usage example.
-  name = get('name'),
-  isPopular = get('isPopular'),
-  age = get('age')
+  const { get, set } = useQuickState(
+      {
+        name: 'JavaScript',
+        age: 30,
+        isPopular: true
+      },
+      true // When you pass true value here, the setters consider its input value as an event object and extracts value out of it.  In this case, you don't need a method like eCbk as used in the previous usage example.
+    ),
+    name = get('name'),
+    isPopular = get('isPopular'),
+    age = get('age')
 
   return (
     <form>
-      <label>
-        Name:
-        <input type="text" name={name} onChange={set('name')} />
-      </label>
-      <br />
-      <label>
-        Is popular?:
-        <input
-          name="isPopular"
-          type="checkbox"
-          checked={isPopular}
-          onChange={set('isPopular')} />
-      </label>
-      <br />
-      <label>
-        Number of years in use:
-        <input
-          name="age"
-          type="number"
-          value={age}
-          onChange={value => setAge('age', value)} />
-      </label>
+      <ul>
+        <li>
+          <strong>Name:</strong> {name}
+        </li>
+        <li>
+          <strong>Number of years in use:</strong> {age}
+        </li>
+        <li>
+          <strong>Is Popular?:</strong> {isPopular ? 'Yes' : 'No'}
+        </li>
+      </ul>
+      <ul style={{ listStyle: 'none', textAlign: 'left' }}>
+        <li>
+          <strong>Name:</strong>
+          <input type="text" name={name} value={name} onChange={set('name')} />
+        </li>
+        <li>
+          <strong>Number of years in use:</strong>
+          <input
+            name="age"
+            type="number"
+            value={age}
+            onChange={value => set('age', value)}
+          />
+        </li>
+        <li>
+          <strong>Is Popular?:</strong>
+          <input
+            name="isPopular"
+            type="checkbox"
+            checked={isPopular}
+            onChange={set('isPopular')}
+          />
+        </li>
+      </ul>
     </form>
   )
 }
